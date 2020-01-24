@@ -10,6 +10,15 @@ namespace DependencyInjection
     {
         static void Main(string[] args)
         {
+            //Use CsvLoader
+            XxxConfigLoader xxxConfigLoader = new CsvConfigLoader();
+            Worker worker = new Worker(xxxConfigLoader);
+
+            //Use IniLoader
+            xxxConfigLoader = new IniConfigLoader();
+            worker = new Worker(xxxConfigLoader);
+
+            Console.Read();
         }
     }
 }
